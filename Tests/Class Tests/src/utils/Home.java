@@ -19,20 +19,20 @@ public class Home {
           }
         }
 
-      public void mudarComodo(String comodo1, String comodo2) {
-        
-        // its not work
-        
-            if (list.contains(comodo1) && list.contains(comodo2)) {
-                int x = list.indexOf(comodo1);
-                int y = list.indexOf(comodo2);
-        
-                list.set(x, list.get(y));
-                list.set(y, list.get(x));
-            }
-        
-        }
+        public void mudarComodo(String comodo1, String comodo2) {
 
+          //fixed
+
+          if (list.contains(comodo1) && list.contains(comodo2)) {
+              int x = list.indexOf(comodo1);
+              int y = list.indexOf(comodo2);
+      
+              String temp = list.get(x);
+              list.set(x, list.get(y));
+              list.set(y, temp);
+          }
+      }
+      
     public void adicionarComodo(String comodo) {
 
         comodo = comodo.toLowerCase();
